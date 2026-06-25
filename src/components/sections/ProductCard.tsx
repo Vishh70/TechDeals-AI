@@ -84,21 +84,22 @@ export function ProductCard({
 
   return (
     <SpotlightCard className="h-full rounded-[20px] shadow-[0_12px_40px_rgba(15,23,42,0.08)]">
-      <GlassCard className="product-card flex flex-col h-full group relative overflow-hidden !border-none !shadow-none !p-4 bg-white">
+      <GlassCard className="product-card flex flex-col h-full group relative overflow-hidden !border-none !shadow-none !p-3 sm:!p-4 bg-white">
         {/* Absolute Top Right - Discount */}
         {discPct > 0 && (
-          <div className="absolute top-3 right-3 z-30 bg-gradient-to-r from-green-500 to-emerald-400 text-white text-[11px] font-black px-3 py-1 rounded-full shadow-md">
+          <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30 bg-gradient-to-r from-green-500 to-emerald-400 text-white text-[10px] sm:text-[11px] font-black px-2 py-0.5 sm:px-3 sm:py-1 rounded-full shadow-md">
             -{discPct}%
           </div>
         )}
 
         {/* Absolute Top Left - Wishlist */}
-        <div className="absolute top-3 left-3 z-30 flex gap-1">
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-30 flex gap-1">
           <button
             aria-label="Save to wishlist"
-            className={`bg-white/90 backdrop-blur-md p-2 w-9 h-9 flex items-center justify-center rounded-full shadow-sm transition-colors duration-300 ${isSaved ? "text-red-500" : "text-gray-400"}`}
+            className={`bg-white/90 backdrop-blur-md p-1.5 w-8 h-8 sm:p-2 sm:w-9 sm:h-9 flex items-center justify-center rounded-full shadow-sm transition-colors duration-300 ${isSaved ? "text-red-500" : "text-gray-400"}`}
             onClick={handleSave}
             disabled={isPending}
+            title="Save to wishlist"
           >
             {isPending ? (
               <span className="w-3 h-3 border-2 border-red-500 border-t-transparent rounded-full animate-spin" />
@@ -113,17 +114,17 @@ export function ProductCard({
 
         <Link
           href={`/product/${product.slug}`}
-          className="flex-1 flex flex-col cursor-pointer mt-10"
+          className="flex-1 flex flex-col cursor-pointer mt-8 sm:mt-10"
         >
           {/* Image */}
-          <div className="relative w-full h-[170px] rounded-[18px] overflow-hidden mb-3 bg-[#F8FAFC] flex items-center justify-center">
+          <div className="relative w-full h-[120px] sm:h-[170px] rounded-[14px] sm:rounded-[18px] overflow-hidden mb-2 sm:mb-3 bg-[#F8FAFC] flex items-center justify-center">
             {imageUrl.startsWith("http") ? (
               <SafeImage
                 src={imageUrl}
                 alt={product.title}
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                className="object-contain p-4 mix-blend-multiply"
+                className="object-contain p-2 sm:p-4 mix-blend-multiply"
                 loading="lazy"
                 placeholder="blur"
                 blurDataURL="data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoKAAoAAgA0p3DdpsW0r+QA/v2oP/5wB/84A/78IAAA"
@@ -131,11 +132,8 @@ export function ProductCard({
             ) : (
               <div className="text-gray-400 text-xs font-medium">No Image</div>
             )}
-          </div>
-
-          {/* AI Score Badge - Below image, left aligned */}
-          <div className="mb-3 flex justify-start">
-            <div className="bg-white rounded-lg">
+            {/* AI Score Badge - Overlaid on Image */}
+            <div className="absolute bottom-1 left-1 sm:bottom-2 sm:left-2 bg-white/90 backdrop-blur-md rounded-lg sm:rounded-xl p-0.5 sm:p-1 shadow-sm scale-75 sm:scale-100 origin-bottom-left">
               <DealScore
                 discount={discPct}
                 rating={product.rating}
@@ -148,7 +146,7 @@ export function ProductCard({
           </div>
 
           {/* Title */}
-          <h3 className="text-[17px] font-[700] text-gray-900 mb-2 line-clamp-2 leading-snug">
+          <h3 className="text-[13px] sm:text-[16px] font-[700] text-gray-900 mb-1.5 sm:mb-2 line-clamp-2 leading-snug">
             {product.title}
           </h3>
 
@@ -171,30 +169,30 @@ export function ProductCard({
           </div>
 
           {/* Price */}
-          <div className="flex min-w-0 flex-wrap items-baseline gap-x-2 gap-y-0.5 mb-2">
-            <span className="min-w-0 text-[30px] font-bold text-gray-900 leading-none">
+          <div className="flex min-w-0 flex-wrap items-baseline gap-x-1.5 sm:gap-x-2 gap-y-0.5 mb-1.5 sm:mb-2">
+            <span className="min-w-0 text-[18px] sm:text-[26px] font-bold text-gray-900 leading-none tracking-tight">
               {priceLabel}
             </span>
             {origLabel && (
-              <span className="min-w-0 text-[13px] text-gray-400 line-through font-medium">
+              <span className="min-w-0 text-[11px] sm:text-[13px] text-gray-400 line-through font-medium">
                 {origLabel}
               </span>
             )}
           </div>
 
           {/* Store / Freshness */}
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-1.5 sm:gap-3 mb-3 sm:mb-4">
             {product.store?.name && (
-              <span className="text-[12px] font-bold text-gray-700 bg-gray-100 px-2 py-1 rounded-md">
+              <span className="text-[10px] sm:text-[12px] font-bold text-gray-700 bg-gray-100 px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-md max-w-[80px] sm:max-w-none truncate">
                 {product.store.name}
               </span>
             )}
             {ago && !hasExpiry && (
               <div
-                className="flex items-center gap-1 text-[11px] text-gray-400 font-medium"
+                className="flex items-center gap-1 text-[10px] sm:text-[11px] text-gray-400 font-medium shrink-0"
                 suppressHydrationWarning
               >
-                <Clock size={12} />
+                <Clock size={10} className="sm:w-3 sm:h-3" />
                 <span suppressHydrationWarning>{ago}</span>
               </div>
             )}
@@ -211,7 +209,7 @@ export function ProductCard({
         {/* CTA Button */}
         <div className="mt-auto">
           {affiliateUrl === "#" ? (
-            <span className="flex items-center justify-center w-full h-[48px] rounded-[14px] bg-gray-50 text-[14px] font-semibold text-gray-400">
+            <span className="flex items-center justify-center w-full h-[38px] sm:h-[48px] rounded-[10px] sm:rounded-[14px] bg-gray-50 text-[13px] sm:text-[14px] font-semibold text-gray-400">
               Unavailable
             </span>
           ) : (
@@ -219,7 +217,7 @@ export function ProductCard({
               href={affiliateUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-full h-[48px] rounded-[14px] bg-gradient-to-b from-[#4F46E5] to-[#2563EB] text-white text-[15px] font-bold shadow-[0_8px_20px_rgba(37,99,235,0.2)] hover:scale-[1.02] transition-transform"
+              className="flex items-center justify-center w-full h-[38px] sm:h-[48px] rounded-[10px] sm:rounded-[14px] bg-gradient-to-b from-[#4F46E5] to-[#2563EB] text-white text-[13px] sm:text-[15px] font-bold shadow-[0_8px_20px_rgba(37,99,235,0.2)] hover:scale-[1.02] transition-transform"
             >
               Get Deal
             </a>

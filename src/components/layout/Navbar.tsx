@@ -80,7 +80,7 @@ export function Navbar({ categories = [] }: NavbarProps) {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 transition-all duration-300 pt-[env(safe-area-inset-top)] ${
           isScrolled
             ? "bg-white/85 backdrop-blur-2xl border-b border-gray-200/50 shadow-sm"
             : "bg-transparent border-transparent"

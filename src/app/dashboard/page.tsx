@@ -10,7 +10,7 @@ import { Heart, History } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 
 export const metadata = {
-  title: "Dashboard - TechDeals AI",
+  title: "Dashboard - SmartNivad",
 };
 
 export default async function DashboardPage() {

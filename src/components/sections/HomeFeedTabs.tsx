@@ -38,20 +38,22 @@ export function HomeFeedTabs({
   return (
     <div className="w-full">
       {/* Tabs */}
-      <div className="flex justify-center mb-8">
-        <div className="flex max-w-full gap-2 overflow-x-auto rounded-full border border-[var(--color-glass-border)] bg-black/5 p-1.5">
+      <div className="flex justify-center mb-8 px-2 sm:px-0">
+        <div className="flex max-w-full gap-1 sm:gap-2 overflow-x-auto hide-scrollbar rounded-full border border-[var(--color-glass-border)] bg-black/5 p-1 sm:p-1.5">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`shrink-0 px-4 py-2.5 sm:px-6 rounded-full text-sm font-bold transition-all ${
+              className={`shrink-0 px-3 py-2 sm:px-6 sm:py-2.5 rounded-full text-[13px] sm:text-sm font-bold transition-all ${
                 activeTab === tab.id
                   ? "bg-[var(--color-primary)] text-white shadow-lg"
                   : "text-gray-600 hover:text-gray-900 hover:bg-black/5"
               }`}
             >
               {tab.label}{" "}
-              <span className="opacity-60 text-xs ml-1">({tab.count})</span>
+              <span className="opacity-60 text-[10px] sm:text-xs ml-0.5 sm:ml-1">
+                ({tab.count})
+              </span>
             </button>
           ))}
         </div>

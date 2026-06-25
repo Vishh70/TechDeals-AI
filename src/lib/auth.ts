@@ -17,20 +17,30 @@ export const authOptions: NextAuthOptions = {
       name: "Admin Login",
       credentials: {
         email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        if (credentials?.email === "admin@techdeals.ai" && credentials?.password === "admin") {
-          return { id: "1", name: "Super Admin", email: "admin@techdeals.ai", role: "admin" };
+        if (
+          credentials?.email === "admin@smartnivad.com" &&
+          credentials?.password === "admin"
+        ) {
+          return {
+            id: "1",
+            name: "Super Admin",
+            email: "admin@smartnivad.com",
+            role: "admin",
+          };
         }
         return null;
-      }
-    })
+      },
+    }),
   ],
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET || "development-secret-do-not-use-in-production-12345",
+  secret:
+    process.env.NEXTAUTH_SECRET ||
+    "development-secret-do-not-use-in-production-12345",
   pages: {
     signIn: "/login",
     error: "/access-denied",
@@ -85,8 +95,14 @@ export async function requireAdmin() {
     redirect("/login");
   }
 
-  if (user.email === "admin@techdeals.ai") {
-    return { id: "1", email: "admin@techdeals.ai", name: "Super Admin", image: null, createdAt: new Date() };
+  if (user.email === "admin@smartnivad.com") {
+    return {
+      id: "1",
+      email: "admin@smartnivad.com",
+      name: "Super Admin",
+      image: null,
+      createdAt: new Date(),
+    };
   }
 
   const adminUser = await prisma.admin.findUnique({

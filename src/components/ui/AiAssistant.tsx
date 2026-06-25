@@ -134,9 +134,7 @@ export function AiAssistant() {
                 <Sparkles size={18} className="text-white" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-gray-900">
-                  TechDeals AI
-                </h3>
+                <h3 className="text-sm font-bold text-gray-900">SmartNivad</h3>
                 <p className="text-[10px] text-gray-500 font-medium">
                   Your shopping assistant
                 </p>

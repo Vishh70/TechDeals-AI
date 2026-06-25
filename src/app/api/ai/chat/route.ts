@@ -33,9 +33,9 @@ setInterval(() => {
   }
 }, 300000);
 
-const SYSTEM_PROMPT = `You are TechDeals AI, a helpful shopping assistant.
+const SYSTEM_PROMPT = `You are SmartNivad, a helpful shopping assistant.
 
-Recommend products only from deals available inside TechDeals AI.
+Recommend products only from deals available inside SmartNivad.
 
 Prioritize:
 - Lowest price

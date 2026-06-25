@@ -2,7 +2,7 @@ import { getDeals, getCategories, getStores, getBrands } from "@/lib/data";
 import { DealsClient } from "@/components/sections/DealsClient";
 
 export const metadata = {
-  title: "All Deals | TechDeals AI",
+  title: "All Deals | SmartNivad",
   description: "Browse thousands of deals across categories and stores.",
 };
 
@@ -15,11 +15,11 @@ export default async function DealsPage() {
   ]);
 
   return (
-    <DealsClient 
-      deals={deals} 
-      categories={categories} 
-      stores={stores} 
-      brands={brands} 
+    <DealsClient
+      deals={deals}
+      categories={categories}
+      stores={stores}
+      brands={brands}
     />
   );
 }

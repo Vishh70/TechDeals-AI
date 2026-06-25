@@ -29,10 +29,10 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const slugs = slug.split("-vs-");
-  if (slugs.length !== 2) return { title: "Compare Products - TechDeals AI" };
+  if (slugs.length !== 2) return { title: "Compare Products - SmartNivad" };
 
   return {
-    title: `${slugs[0].replace(/-/g, " ").toUpperCase()} vs ${slugs[1].replace(/-/g, " ").toUpperCase()} - Which is better? | TechDeals AI`,
+    title: `${slugs[0].replace(/-/g, " ").toUpperCase()} vs ${slugs[1].replace(/-/g, " ").toUpperCase()} - Which is better? | SmartNivad`,
     description: `Comprehensive AI comparison between ${slugs[0].replace(/-/g, " ")} and ${slugs[1].replace(/-/g, " ")}. We compare battery, display, camera, performance, and value.`,
   };
 }

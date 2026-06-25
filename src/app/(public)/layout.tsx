@@ -10,15 +10,15 @@ const AiAssistant = dynamic(() =>
 
 function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-[#ECECEC] pt-10 pb-[100px] lg:pb-10 relative z-10">
+    <footer className="w-full bg-white border-t border-[#ECECEC] pt-10 pb-[160px] lg:pb-10 relative z-10">
       <div className="max-w-7xl mx-auto px-5">
         {/* Brand Section */}
         <div className="max-w-[280px] mx-auto flex flex-col items-center text-center">
           <h3 className="text-[30px] font-[700] text-gray-900 flex items-center justify-center gap-2">
             <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white text-sm">
-              TA
+              SN
             </span>
-            TechDeals<span className="text-blue-600">.</span>
+            SmartNivad<span className="text-blue-600">.</span>
           </h3>
           <p className="mt-[10px] text-[15px] text-[#6B7280] leading-[1.7]">
             Discover AI-powered tech deals.
@@ -35,9 +35,9 @@ function Footer() {
             href="https://www.instagram.com/smartnivad?igsh=MW1ldnFwNXVlczh0OQ=="
             target="_blank"
             rel="noopener noreferrer"
-            className="w-[48%] max-w-[160px] h-[46px] rounded-[999px] flex items-center justify-center gap-2 bg-[#25D366]/10 text-[#25D366] font-[600] text-sm shadow-[0_8px_20px_rgba(0,0,0,.05)] hover:-translate-y-[2px] hover:scale-[1.02] transition-all duration-[0.25s]"
+            className="w-[48%] max-w-[160px] h-[46px] rounded-[999px] flex items-center justify-center gap-2 bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white font-[600] text-sm shadow-[0_8px_20px_rgba(0,0,0,.05)] hover:-translate-y-[2px] hover:scale-[1.02] transition-all duration-[0.25s]"
           >
-            📸 WhatsApp
+            📸 Instagram
           </a>
           <a
             href="https://t.me/SmartNivad"
@@ -166,7 +166,7 @@ function Footer() {
             qualifying purchases.
           </p>
           <p className="mt-[10px] text-[13px] text-[#9CA3AF]">
-            &copy; {new Date().getFullYear()} TechDeals AI. All rights reserved.
+            &copy; {new Date().getFullYear()} SmartNivad. All rights reserved.
           </p>
         </div>
       </div>
@@ -182,7 +182,7 @@ export default async function PublicLayout({
   const categories = await getCategories();
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-hidden pb-16 lg:pb-0">
+    <div className="min-h-screen flex flex-col relative overflow-hidden">
       <Navbar categories={categories} />
       <main className="flex-1 w-full relative z-10">{children}</main>
       <Footer />

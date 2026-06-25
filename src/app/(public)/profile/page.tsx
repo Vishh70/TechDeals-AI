@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "My Saved Deals | TechDeals AI",
+  title: "My Saved Deals | SmartNivad",
   description: "View your saved tech deals and wishlists.",
 };
 

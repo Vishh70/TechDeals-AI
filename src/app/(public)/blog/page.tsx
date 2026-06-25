@@ -6,7 +6,7 @@ import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { getBlogPosts } from "@/lib/data";
 
 export const metadata = {
-  title: "Tech Blog — Best Buying Guides & Reviews | TechDeals AI",
+  title: "Tech Blog — Best Buying Guides & Reviews | SmartNivad",
   description:
     "Expert buying guides, tech reviews, and deal tips to help you make smarter purchasing decisions.",
 };

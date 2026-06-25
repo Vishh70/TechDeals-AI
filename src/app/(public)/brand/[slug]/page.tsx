@@ -17,7 +17,7 @@ export async function generateMetadata({
   const brand = brands.find((b) => b.slug === slug);
   if (!brand) return { title: "Brand Not Found" };
   return {
-    title: `${brand.name} Deals — TechDeals AI`,
+    title: `${brand.name} Deals — SmartNivad`,
     description: `Find the best AI-curated ${brand.name} deals available right now.`,
   };
 }

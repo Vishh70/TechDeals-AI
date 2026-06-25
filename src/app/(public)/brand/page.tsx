@@ -6,7 +6,7 @@ import { getBrands, getDeals } from "@/lib/data";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "All Brands — TechDeals AI",
+  title: "All Brands — SmartNivad",
   description: "Browse deals from all major tech brands.",
 };
 

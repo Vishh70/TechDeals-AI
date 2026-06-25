@@ -6,11 +6,18 @@ import { Trophy, ShieldCheck, Sparkles } from "lucide-react";
 
 export const revalidate = 3600; // Cache for 1 hour
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const title = slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
   return {
-    title: `Best ${title} in 2026 - AI Ranked & Reviewed | TechDeals AI`,
+    title: `Best ${title} in 2026 - AI Ranked & Reviewed | SmartNivad`,
     description: `Discover the top rated ${title.toLowerCase()} right now. We use AI to analyze prices, reviews, and specifications to rank the best options for your budget.`,
   };
 }
@@ -20,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 function parseSlug(slug: string) {
   let maxPrice = undefined;
   let query = slug;
-  
+
   if (slug.includes("-under-")) {
     const parts = slug.split("-under-");
     query = parts[0].replace(/-/g, " ");
@@ -35,7 +42,11 @@ function parseSlug(slug: string) {
   return { query, categoryQuery, maxPrice };
 }
 
-export default async function BestOfPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BestOfPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const { query, categoryQuery, maxPrice } = parseSlug(slug);
 
@@ -44,39 +55,41 @@ export default async function BestOfPage({ params }: { params: Promise<{ slug: s
     where: {
       OR: [
         { name: { contains: categoryQuery, mode: "insensitive" } },
-        { slug: { contains: categoryQuery, mode: "insensitive" } }
-      ]
-    }
+        { slug: { contains: categoryQuery, mode: "insensitive" } },
+      ],
+    },
   });
 
   // Query Deals
   const deals = await prisma.deal.findMany({
     where: {
       status: "PUBLISHED",
-      ...(category ? { categoryId: category.id } : {
-        OR: [
-          { title: { contains: categoryQuery, mode: "insensitive" } },
-          { tags: { has: categoryQuery.toLowerCase() } }
-        ]
-      }),
-      ...(maxPrice ? { currentPrice: { lte: maxPrice } } : {})
+      ...(category
+        ? { categoryId: category.id }
+        : {
+            OR: [
+              { title: { contains: categoryQuery, mode: "insensitive" } },
+              { tags: { has: categoryQuery.toLowerCase() } },
+            ],
+          }),
+      ...(maxPrice ? { currentPrice: { lte: maxPrice } } : {}),
     },
     include: {
       store: true,
       brand: true,
     },
-    orderBy: [
-      { rating: 'desc' },
-      { discount: 'desc' }
-    ],
-    take: 10
+    orderBy: [{ rating: "desc" }, { discount: "desc" }],
+    take: 10,
   });
 
   if (deals.length === 0) {
     notFound();
   }
 
-  const titleStr = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const titleStr = slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
 
   return (
     <div className="w-full relative overflow-hidden bg-white pb-32">
@@ -85,16 +98,22 @@ export default async function BestOfPage({ params }: { params: Promise<{ slug: s
         {/* Subtle glow */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px]" />
-        
+
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-800/50 border border-blue-700 text-blue-200 text-xs font-bold uppercase tracking-wider mb-6 backdrop-blur-md">
-            <Sparkles size={14} /> Updated for {new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}
+            <Sparkles size={14} /> Updated for{" "}
+            {new Date().toLocaleString("default", {
+              month: "long",
+              year: "numeric",
+            })}
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
             Best {titleStr}
           </h1>
           <p className="text-xl text-blue-100 font-medium max-w-2xl mx-auto leading-relaxed">
-            We analyzed thousands of data points, price drops, and verified reviews to rank the absolute best {query.toLowerCase()} available right now.
+            We analyzed thousands of data points, price drops, and verified
+            reviews to rank the absolute best {query.toLowerCase()} available
+            right now.
           </p>
         </div>
       </div>
@@ -103,7 +122,8 @@ export default async function BestOfPage({ params }: { params: Promise<{ slug: s
         {/* Trust Bar */}
         <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 flex flex-col sm:flex-row items-center justify-center gap-8 mb-16">
           <div className="flex items-center gap-2 text-gray-700 font-semibold text-sm">
-            <ShieldCheck className="text-green-500" size={20} /> AI-Verified Specs
+            <ShieldCheck className="text-green-500" size={20} /> AI-Verified
+            Specs
           </div>
           <div className="hidden sm:block w-px h-8 bg-gray-200" />
           <div className="flex items-center gap-2 text-gray-700 font-semibold text-sm">
@@ -115,7 +135,10 @@ export default async function BestOfPage({ params }: { params: Promise<{ slug: s
           </div>
         </div>
 
-        <SectionHeading title={`Top ${deals.length} Picks`} subtitle="Ranked from best to great based on our AI scoring." />
+        <SectionHeading
+          title={`Top ${deals.length} Picks`}
+          subtitle="Ranked from best to great based on our AI scoring."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {deals.map((deal, idx) => (

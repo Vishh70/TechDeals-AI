@@ -2,9 +2,9 @@ import { Mail } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
 
 export const metadata = {
-  title: "Contact Us — TechDeals AI",
+  title: "Contact Us — SmartNivad",
   description:
-    "Get in touch with the TechDeals AI team for deal submissions, partnerships, or support.",
+    "Get in touch with the SmartNivad team for deal submissions, partnerships, or support.",
 };
 
 export default function ContactPage() {
@@ -26,8 +26,8 @@ export default function ContactPage() {
           {
             icon: "📧",
             label: "Email",
-            value: "hello@techdealsai.com",
-            href: "mailto:hello@techdealsai.com",
+            value: "hello@smartnivad.com",
+            href: "mailto:hello@smartnivad.com",
           },
           {
             icon: "📸",

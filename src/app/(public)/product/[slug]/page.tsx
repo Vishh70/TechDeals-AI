@@ -30,7 +30,7 @@ export async function generateMetadata({
   return {
     title:
       product.seoTitle ||
-      `${product.title} - Best Deals & Reviews | TechDeals AI`,
+      `${product.title} - Best Deals & Reviews | SmartNivad`,
     description: product.seoDesc || product.description,
     keywords: product.tags?.length ? product.tags : undefined,
     openGraph: {

@@ -10,7 +10,7 @@ export default function DesignPreview() {
 
       <SectionHeading
         title="Design System Preview"
-        subtitle="Premium Dark Glassmorphism Theme for TechDeals AI"
+        subtitle="Premium Dark Glassmorphism Theme for SmartNivad"
       />
 
       <section className="mt-16 space-y-8 max-w-7xl mx-auto">

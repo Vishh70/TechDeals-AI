@@ -14,7 +14,7 @@ export async function generateMetadata({
   const category = categories.find((c) => c.slug === slug);
   if (!category) return { title: "Category Not Found" };
   return {
-    title: `${category.name} Deals & Offers — TechDeals AI`,
+    title: `${category.name} Deals & Offers — SmartNivad`,
     description:
       category.description ??
       `Find the best AI-curated deals on ${category.name}.`,

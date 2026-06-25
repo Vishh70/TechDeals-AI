@@ -6,7 +6,7 @@ import { GlowButton } from "@/components/ui/GlowButton";
 import { GlassCard } from "@/components/ui/GlassCard";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("admin@techdeals.ai");
+  const [email, setEmail] = useState("admin@smartnivad.com");
   const [password, setPassword] = useState("admin");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -25,7 +25,7 @@ export default function LoginPage() {
       <GlassCard className="w-full max-w-md p-8 md:p-12">
         <div className="text-center mb-8">
           <div className="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] mb-2">
-            TechDeals Admin
+            SmartNivad Admin
           </div>
           <p className="text-gray-600">Sign in to manage your platform</p>
         </div>

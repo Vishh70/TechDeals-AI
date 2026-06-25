@@ -4,7 +4,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { getStores, getDeals, getCoupons } from "@/lib/data";
 
 export const metadata = {
-  title: "All Stores — TechDeals AI",
+  title: "All Stores — SmartNivad",
   description: "Browse deals and coupons from all major tech stores.",
 };
 
