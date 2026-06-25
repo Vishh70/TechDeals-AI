@@ -175,7 +175,7 @@ export function Navbar() {
             <input
               type="text"
               placeholder="Search laptops, smartphones, stores..."
-              className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl text-gray-900 focus:outline-none focus:bg-white focus:border-blue-500 transition-all font-medium"
+              className="w-full pl-12 pr-4 py-4 bg-gray-50 border-2 border-transparent rounded-2xl text-gray-900 text-base focus:outline-none focus:bg-white focus:border-blue-500 transition-all font-medium"
               value={searchQ}
               onChange={(e) => setSearchQ(e.target.value)}
               autoFocus
