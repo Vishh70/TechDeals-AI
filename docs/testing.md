@@ -37,7 +37,7 @@ Security headers are configured in `next.config.ts`. `npm audit --audit-level=hi
 
 ## Production Monitoring
 
-Vercel Analytics and Speed Insights are mounted in `src/app/layout.tsx`. `@sentry/nextjs` is installed; complete Sentry setup by adding the project DSN and generated Sentry config files for the target organization/environment.
+Vercel Analytics and Speed Insights are mounted in `src/app/layout.tsx`. `@sentry/nextjs` and the generated Sentry config files are present, but the `withSentryConfig` wrapper is not enabled in `next.config.ts` until the local Sentry package install is healthy and the target `NEXT_PUBLIC_SENTRY_DSN`, `SENTRY_ORG`, and `SENTRY_PROJECT` values are configured.
 
 ## Coverage Expansion
 
