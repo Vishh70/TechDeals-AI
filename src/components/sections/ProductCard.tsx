@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { Star, Clock, Heart } from "lucide-react";
 import { GlassCard } from "@/components/ui/GlassCard";
@@ -11,6 +10,7 @@ import { useSession, signIn } from "next-auth/react";
 import { useState, useTransition } from "react";
 import { toggleSavedDeal } from "@/app/(public)/actions";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { SafeImage } from "@/components/ui/SafeImage";
 
 interface DealCardProps {
   product: {
@@ -88,21 +88,21 @@ export function ProductCard({ product, initialSaved = false }: DealCardProps & {
   return (
     <SpotlightCard className="h-full rounded-2xl">
       <GlassCard className="product-card flex flex-col h-full group relative overflow-hidden !border-none !shadow-none !p-3 sm:!p-4 md:!p-6">
-        {/* Discount Badge */}
-        {discPct > 0 && (
-          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-20 bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[10px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-md">
-            -{discPct}%
-          </div>
-        )}
+        {/* Top Left Badges (Discount + Deal Type) */}
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-20 flex flex-col gap-1 items-start">
+          {discPct > 0 && (
+            <div className="bg-gradient-to-r from-blue-600 to-cyan-500 text-white text-[10px] sm:text-xs font-black px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-md">
+              -{discPct}%
+            </div>
+          )}
+          {dealBadge && (
+            <div className={`text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-md ${DEAL_TYPE_STYLES[dealBadge] ?? "bg-gray-500 text-white"}`}>
+              {dealBadge}
+            </div>
+          )}
+        </div>
 
-        {/* Deal Type Badge */}
-        {dealBadge && (
-          <div className={`absolute top-2 right-2 sm:top-3 sm:right-3 z-20 text-[10px] sm:text-xs font-bold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full shadow-md ${DEAL_TYPE_STYLES[dealBadge] ?? "bg-gray-500 text-white"}`}>
-            {dealBadge}
-          </div>
-        )}
-
-        <div className="absolute top-9 sm:top-12 right-2 sm:right-3 z-30 flex gap-1">
+        <div className="absolute top-2 sm:top-3 right-2 sm:right-3 z-30 flex gap-1">
           <button
             aria-label="Save to wishlist"
             className={`bg-white/90 backdrop-blur-md p-2 min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full shadow-sm transition-colors duration-300 ${isSaved ? "text-red-500" : "text-gray-400"}`}
@@ -121,7 +121,7 @@ export function ProductCard({ product, initialSaved = false }: DealCardProps & {
           {/* Image - Compact on mobile */}
           <div className="relative w-full aspect-square sm:aspect-[4/3] rounded-xl overflow-hidden mb-2 sm:mb-4 bg-gray-50">
             {imageUrl.startsWith("http") ? (
-              <Image
+              <SafeImage
                 src={imageUrl}
                 alt={product.title}
                 fill
@@ -138,7 +138,7 @@ export function ProductCard({ product, initialSaved = false }: DealCardProps & {
             )}
             {/* AI Score overlay */}
             <div className="absolute bottom-1 right-1 sm:bottom-2 sm:right-2 z-10">
-              <div className="bg-white/90 backdrop-blur-md rounded-lg p-0.5 sm:p-1 shadow-sm">
+              <div className="bg-white/90 backdrop-blur-md rounded-lg p-0.5 sm:p-1 shadow-sm scale-90 sm:scale-100 origin-bottom-right">
                 <DealScore
                   discount={discPct}
                   rating={product.rating}
@@ -169,10 +169,10 @@ export function ProductCard({ product, initialSaved = false }: DealCardProps & {
           </div>
 
           {/* Price - Compact */}
-          <div className="flex items-baseline gap-1.5 sm:gap-2 mb-1">
-            <span className="text-base sm:text-xl font-black text-gray-900">{priceLabel}</span>
+          <div className="flex min-w-0 flex-wrap items-baseline gap-x-1.5 gap-y-0.5 sm:gap-x-2 mb-1">
+            <span className="min-w-0 text-base sm:text-xl font-black text-gray-900">{priceLabel}</span>
             {origLabel && (
-              <span className="text-[10px] sm:text-sm text-gray-400 line-through font-medium">{origLabel}</span>
+              <span className="min-w-0 text-[10px] sm:text-sm text-gray-400 line-through font-medium">{origLabel}</span>
             )}
           </div>
 
