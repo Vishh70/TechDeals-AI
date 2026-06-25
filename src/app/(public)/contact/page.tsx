@@ -30,16 +30,16 @@ export default function ContactPage() {
             href: "mailto:hello@techdealsai.com",
           },
           {
-            icon: "📲",
-            label: "WhatsApp",
-            value: "Join our channel",
-            href: "#",
+            icon: "📸",
+            label: "Instagram",
+            value: "@smartnivad",
+            href: "https://www.instagram.com/smartnivad?igsh=MW1ldnFwNXVlczh0OQ==",
           },
           {
             icon: "✈️",
             label: "Telegram",
-            value: "Join our channel",
-            href: "#",
+            value: "@SmartNivad",
+            href: "https://t.me/SmartNivad",
           },
         ].map((c) => (
           <a key={c.label} href={c.href} className="group">

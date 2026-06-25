@@ -26,13 +26,17 @@ function Footer() {
             </p>
             <div className="flex flex-wrap justify-center sm:justify-start gap-3 w-full">
               <a
-                href="/contact"
-                className="px-5 py-2.5 rounded-[14px] bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 text-xs font-bold hover:bg-[#25D366]/20 transition-colors flex-1 sm:flex-none text-center"
+                href="https://www.instagram.com/smartnivad?igsh=MW1ldnFwNXVlczh0OQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 rounded-[14px] bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white border border-[#dc2743]/20 text-xs font-bold hover:opacity-90 transition-opacity flex-1 sm:flex-none text-center"
               >
-                📲 WhatsApp
+                📸 Instagram
               </a>
               <a
-                href="/contact"
+                href="https://t.me/SmartNivad"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-5 py-2.5 rounded-[14px] bg-[#1DA1F2]/10 text-[#1DA1F2] border border-[#1DA1F2]/20 text-xs font-bold hover:bg-[#1DA1F2]/20 transition-colors flex-1 sm:flex-none text-center"
               >
                 ✈️ Telegram

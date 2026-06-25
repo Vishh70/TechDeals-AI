@@ -65,12 +65,22 @@ export default async function CategoryPage({
         </p>
 
         <div className="flex justify-center gap-4 flex-wrap">
-          <button className="px-6 py-2 rounded-full bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/50 hover:bg-[#25D366]/30 transition-all text-sm font-medium">
-            📲 Join WhatsApp Alerts
-          </button>
-          <button className="px-6 py-2 rounded-full bg-[#1DA1F2]/20 text-[#1DA1F2] border border-[#1DA1F2]/50 hover:bg-[#1DA1F2]/30 transition-all text-sm font-medium">
+          <a
+            href="https://www.instagram.com/smartnivad?igsh=MW1ldnFwNXVlczh0OQ=="
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 rounded-full bg-gradient-to-r from-[#f09433] via-[#dc2743] to-[#bc1888] text-white border border-[#dc2743]/50 hover:opacity-90 transition-all text-sm font-medium"
+          >
+            📸 Follow on Instagram
+          </a>
+          <a
+            href="https://t.me/SmartNivad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2 rounded-full bg-[#1DA1F2]/20 text-[#1DA1F2] border border-[#1DA1F2]/50 hover:bg-[#1DA1F2]/30 transition-all text-sm font-medium"
+          >
             ✈️ Join Telegram Channel
-          </button>
+          </a>
         </div>
       </div>
 
