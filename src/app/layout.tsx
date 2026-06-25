@@ -16,22 +16,22 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
-    default: 'TechDeals AI - Best Tech Deals & Reviews',
-    template: '%s | TechDeals AI',
+    default: 'SmartNivad - Find the Best Deals. Save More.',
+    template: '%s | SmartNivad',
   },
   description: 'Discover best tech deals powered by AI. Compare products, read reviews, and save money on smartphones, laptops, audio, cameras & more.',
   openGraph: {
-    title: 'TechDeals AI - Best Tech Deals & Reviews',
+    title: 'SmartNivad - Find the Best Deals. Save More.',
     description: 'Discover best tech deals powered by AI. Compare products, read reviews, and save money.',
     url: '/',
-    siteName: 'TechDeals AI',
+    siteName: 'SmartNivad',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TechDeals AI',
-    description: 'Best Tech Deals & Reviews',
+    title: 'SmartNivad',
+    description: 'Find the Best Deals. Save More.',
   },
 };
 

@@ -16,7 +16,7 @@ import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 import { Particles } from "@/components/ui/Particles";
 
 export const metadata = {
-  title: "TechDeals AI — Smart Deals. Bigger Savings.",
+  title: "SmartNivad — Find the Best Deals. Save More.",
   description: "AI-curated tech deals, reviews, and buying guides. Save money on laptops, phones, gaming, and more.",
 };
 
@@ -53,10 +53,10 @@ export default async function HomePage() {
           <div className="text-center lg:text-left z-10">
             <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tighter leading-[1.1]">
               <ScrollReveal delay={200}>
-                Smart Deals.
+                Find the Best Deals.
               </ScrollReveal>
               <ScrollReveal delay={400}>
-                <span className="gradient-text">Bigger Savings.</span>
+                <span className="gradient-text">Save More.</span>
               </ScrollReveal>
             </h1>
             <ScrollReveal delay={600}>

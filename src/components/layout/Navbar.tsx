@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Search, Menu, X, Tag, Store, Cpu, BookOpen, HelpCircle, Laptop, Smartphone, Headphones, Gamepad2, UserCircle, LogOut, ChevronDown, Zap } from "lucide-react";
+import Image from "next/image";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -44,8 +45,8 @@ export function Navbar() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link href="/" className="text-2xl font-black text-gray-900 tracking-tight shrink-0 flex items-center gap-2">
-              <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#2563EB] to-[#06B6D4] flex items-center justify-center text-white text-sm shadow-sm">TA</span>
-              TechDeals<span className="text-[#2563EB]">.</span>
+              <Image src="/logo.png" alt="SmartNivad Logo" width={36} height={36} className="object-contain drop-shadow-sm" />
+              SmartNivad
             </Link>
 
             {/* Desktop Nav */}
