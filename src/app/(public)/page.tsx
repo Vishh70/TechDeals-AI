@@ -73,18 +73,18 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 1. HERO SECTION                                                    */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pt-16 pb-10 sm:pt-32 sm:pb-24 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-12 pb-8 sm:pt-24 sm:pb-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Copy & CTA */}
           <div className="text-center lg:text-left z-10">
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-gray-900 mb-4 sm:mb-6 tracking-tighter leading-[1.1]">
+            <h1 className="text-[32px] sm:text-5xl md:text-7xl lg:text-8xl font-[800] text-gray-900 mb-3 sm:mb-6 tracking-tight leading-[1.1]">
               <ScrollReveal delay={200}>Find the Best Deals.</ScrollReveal>{" "}
               <ScrollReveal delay={400}>
-                <span className="gradient-text">Save More.</span>
+                <span className="text-blue-600">Save More.</span>
               </ScrollReveal>
             </h1>
             <ScrollReveal delay={600}>
-              <p className="text-sm sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 mb-6 sm:mb-10 font-medium">
+              <p className="text-[16px] sm:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 font-[500]">
                 AI-powered product discovery, price tracking, and deal
                 recommendations.
               </p>
@@ -94,7 +94,7 @@ export default async function HomePage() {
               <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-12">
                 <Link href="/deals" className="w-full sm:w-auto block">
                   <MagneticButton className="w-full">
-                    <div className="gradient-btn w-full px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-bold flex items-center justify-center gap-2">
+                    <div className="w-full h-[52px] px-6 sm:px-8 rounded-[14px] bg-gradient-to-b from-[#4F46E5] to-[#2563EB] text-white text-base font-bold flex items-center justify-center gap-2 shadow-[0_10px_30px_rgba(37,99,235,0.25)] hover:scale-[1.02] transition-transform">
                       Explore Deals <ChevronRight size={20} />
                     </div>
                   </MagneticButton>
@@ -230,10 +230,10 @@ export default async function HomePage() {
                 title="⚡ Flash Deals"
                 subtitle="These deals expire soon — grab them before they're gone!"
               />
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mt-6 sm:mt-10">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-[14px] sm:gap-6 mt-6 sm:mt-10">
                 {flashDeals.map((deal, idx) => (
                   <ScrollReveal key={deal.id} delay={idx * 100}>
-                    <div className="flash-deal rounded-3xl h-full">
+                    <div className="flash-deal rounded-3xl h-full min-h-[330px]">
                       <ProductCard product={deal} />
                     </div>
                   </ScrollReveal>
@@ -253,9 +253,13 @@ export default async function HomePage() {
                 title="AI Recommendations"
                 subtitle="Top picks selected by our AI based on value, quality, and trust."
               />
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 mt-6 sm:mt-10">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-[14px] sm:gap-6 mt-6 sm:mt-10">
                 {featured.slice(0, 8).map((deal, idx) => (
-                  <ScrollReveal key={deal.id} delay={idx * 100}>
+                  <ScrollReveal
+                    key={deal.id}
+                    delay={idx * 100}
+                    className="min-h-[330px]"
+                  >
                     <ProductCard product={deal} />
                   </ScrollReveal>
                 ))}
@@ -273,23 +277,25 @@ export default async function HomePage() {
               title="Top Categories"
               subtitle="Browse deals by your favorite tech categories."
             />
-            <div className="flex overflow-x-auto snap-x hide-scrollbar md:grid md:grid-cols-4 gap-6 mt-12 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex overflow-x-auto snap-x hide-scrollbar md:grid md:grid-cols-4 gap-4 mt-12 pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
               {categories.map((category, idx) => (
                 <ScrollReveal
                   key={category.id}
                   delay={idx * 50}
-                  className="group shrink-0 w-[240px] md:w-auto snap-center h-full"
+                  className="group shrink-0 w-[150px] md:w-auto snap-center h-[140px] md:h-full"
                 >
                   <Link href={`/deals?category=${category.slug}`}>
-                    <GlassCard className="text-center hover:border-blue-200 transition-all !p-8 h-full flex flex-col items-center justify-center gap-5">
-                      <CategoryIcon iconName={category.icon} />
+                    <GlassCard className="text-center hover:border-blue-200 hover:scale-[1.03] transition-all !p-4 h-full flex flex-col items-center justify-center gap-3 rounded-[18px]">
+                      <div className="w-[56px] h-[56px] flex items-center justify-center bg-blue-50 text-blue-600 rounded-full">
+                        <CategoryIcon iconName={category.icon} />
+                      </div>
                       <div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        <h3 className="text-[16px] font-bold text-gray-900 mb-0 group-hover:text-blue-600 transition-colors">
                           {category.name}
                         </h3>
-                        <p className="text-sm font-semibold text-gray-500">
+                        <p className="text-[13px] font-semibold text-gray-500">
                           Explore deals{" "}
-                          <ChevronRight size={14} className="inline" />
+                          <ChevronRight size={12} className="inline" />
                         </p>
                       </div>
                     </GlassCard>

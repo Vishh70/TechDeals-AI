@@ -1,0 +1,480 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e\responsive.spec.ts >> does not horizontally overflow on /
+- Location: tests\e2e\responsive.spec.ts:7:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+    - navigation [ref=e3]:
+        - generic [ref=e5]:
+            - link "SmartNivad Logo SmartNivad" [ref=e6] [cursor=pointer]:
+                - /url: /
+                - img "SmartNivad Logo" [ref=e7]
+                - text: SmartNivad
+            - generic [ref=e8]:
+                - button "Search" [ref=e9]:
+                    - img [ref=e10]
+                - button "Toggle menu" [ref=e15]:
+                    - img [ref=e16]
+    - main [ref=e17]:
+        - generic [ref=e19]:
+            - generic [ref=e22]:
+                - generic [ref=e23]:
+                    - heading "Find the Best Deals. Save More." [level=1] [ref=e24]:
+                        - generic [ref=e25]: Find the Best Deals.
+                        - generic [ref=e26]: Save More.
+                    - paragraph [ref=e28]: AI-powered product discovery, price tracking, and deal recommendations.
+                    - generic [ref=e30]:
+                        - link "Explore Deals" [ref=e31] [cursor=pointer]:
+                            - /url: /deals
+                            - button "Explore Deals" [ref=e32]:
+                                - generic [ref=e33]:
+                                    - text: Explore Deals
+                                    - img [ref=e34]
+                        - link "Compare Products" [ref=e36] [cursor=pointer]:
+                            - /url: /compare
+                            - button "Compare Products" [ref=e37]:
+                                - generic [ref=e38]: Compare Products
+                    - generic [ref=e40]:
+                        - generic [ref=e41]:
+                            - img [ref=e42]
+                            - generic [ref=e45]: 0+
+                            - text: Monthly Users
+                        - generic [ref=e46]:
+                            - img [ref=e47]
+                            - text: Verified Deals
+                        - generic [ref=e50]:
+                            - img [ref=e51]
+                            - text: Amazon & Flipkart Partners
+                        - generic [ref=e54]:
+                            - img [ref=e55]
+                            - text: AI Powered
+                - generic [ref=e61]:
+                    - generic [ref=e62]:
+                        - img "Nothing Phone 2a clean Android midrange deal" [ref=e63]
+                        - generic [ref=e64]:
+                            - img [ref=e65]
+                            - text: 21% OFF
+                        - 'generic "AI Score: 77/100 — Very Good" [ref=e70]':
+                            - generic [ref=e71]:
+                                - img [ref=e72]
+                                - generic [ref=e75]: "0"
+                            - generic [ref=e76]: Very Good
+                    - heading "Nothing Phone 2a clean Android midrange deal" [level=3] [ref=e77]
+                    - generic [ref=e78]:
+                        - generic [ref=e79]: ₹21999
+                        - generic [ref=e80]: ₹27999
+                    - link "View AI Analysis" [ref=e81] [cursor=pointer]:
+                        - /url: /product/nothing-phone-2a-clean-android-midrange-deal
+                        - button "View AI Analysis" [ref=e82]:
+                            - generic [ref=e83]: View AI Analysis
+            - generic [ref=e84]:
+                - generic [ref=e86]:
+                    - generic [ref=e87]:
+                        - heading "Trending Deals" [level=2] [ref=e88]
+                        - paragraph [ref=e89]: Real-time verified discounts across top stores.
+                    - generic [ref=e92]:
+                        - generic [ref=e94]:
+                            - button "🟢 Live Deals (4)" [ref=e95]:
+                                - text: 🟢 Live Deals
+                                - generic [ref=e96]: (4)
+                            - button "🔥 Hot Deals (2)" [ref=e97]:
+                                - text: 🔥 Hot Deals
+                                - generic [ref=e98]: (2)
+                            - button "📈 Trending (4)" [ref=e99]:
+                                - text: 📈 Trending
+                                - generic [ref=e100]: (4)
+                        - generic [ref=e101]:
+                            - generic [ref=e104]:
+                                - generic [ref=e105]: "-21%"
+                                - button "Save to wishlist" [ref=e107]:
+                                    - img [ref=e108]
+                                - link "Nothing Phone 2a clean Android midrange deal 0 Very Good Nothing Phone 2a clean Android midrange deal 4.4 ₹21,999 ₹27,999 Flipkart 1 d ago" [ref=e110] [cursor=pointer]:
+                                    - /url: /product/nothing-phone-2a-clean-android-midrange-deal
+                                    - img "Nothing Phone 2a clean Android midrange deal" [ref=e112]
+                                    - 'generic "AI Score: 77/100 — Very Good" [ref=e115]':
+                                        - generic [ref=e116]:
+                                            - img [ref=e117]
+                                            - generic [ref=e120]: "0"
+                                        - generic [ref=e121]: Very Good
+                                    - heading "Nothing Phone 2a clean Android midrange deal" [level=3] [ref=e122]
+                                    - generic [ref=e123]:
+                                        - img [ref=e124]
+                                        - img [ref=e126]
+                                        - img [ref=e128]
+                                        - img [ref=e130]
+                                        - img [ref=e132]
+                                        - generic [ref=e134]: "4.4"
+                                    - generic [ref=e135]:
+                                        - generic [ref=e136]: ₹21,999
+                                        - generic [ref=e137]: ₹27,999
+                                    - generic [ref=e138]:
+                                        - generic [ref=e139]: Flipkart
+                                        - generic [ref=e140]:
+                                            - img [ref=e141]
+                                            - generic [ref=e144]: 1 d ago
+                                - generic [ref=e146]: Unavailable
+                            - generic [ref=e149]:
+                                - generic [ref=e150]: "-27%"
+                                - button "Save to wishlist" [ref=e152]:
+                                    - img [ref=e153]
+                                - link "Logitech MX Master 3S productivity mouse deal 0 Very Good Logitech MX Master 3S productivity mouse deal 4.7 ₹7,995 ₹10,995 Amazon 1 d ago" [ref=e155] [cursor=pointer]:
+                                    - /url: /product/logitech-mx-master-3s-productivity-mouse-deal
+                                    - img "Logitech MX Master 3S productivity mouse deal" [ref=e157]
+                                    - 'generic "AI Score: 82/100 — Very Good" [ref=e160]':
+                                        - generic [ref=e161]:
+                                            - img [ref=e162]
+                                            - generic [ref=e165]: "0"
+                                        - generic [ref=e166]: Very Good
+                                    - heading "Logitech MX Master 3S productivity mouse deal" [level=3] [ref=e167]
+                                    - generic [ref=e168]:
+                                        - img [ref=e169]
+                                        - img [ref=e171]
+                                        - img [ref=e173]
+                                        - img [ref=e175]
+                                        - img [ref=e177]
+                                        - generic [ref=e179]: "4.7"
+                                    - generic [ref=e180]:
+                                        - generic [ref=e181]: ₹7,995
+                                        - generic [ref=e182]: ₹10,995
+                                    - generic [ref=e183]:
+                                        - generic [ref=e184]: Amazon
+                                        - generic [ref=e185]:
+                                            - img [ref=e186]
+                                            - generic [ref=e189]: 1 d ago
+                                - generic [ref=e191]: Unavailable
+                            - generic [ref=e194]:
+                                - generic [ref=e195]: "-18%"
+                                - button "Save to wishlist" [ref=e197]:
+                                    - img [ref=e198]
+                                - link "ASUS ROG Zephyrus G14 creator gaming deal 0 Very Good ASUS ROG Zephyrus G14 creator gaming deal 4.5 ₹1,39,990 ₹1,69,990 Amazon 1 d ago" [ref=e200] [cursor=pointer]:
+                                    - /url: /product/asus-rog-zephyrus-g14-creator-gaming-deal
+                                    - img "ASUS ROG Zephyrus G14 creator gaming deal" [ref=e202]
+                                    - 'generic "AI Score: 75/100 — Very Good" [ref=e205]':
+                                        - generic [ref=e206]:
+                                            - img [ref=e207]
+                                            - generic [ref=e210]: "0"
+                                        - generic [ref=e211]: Very Good
+                                    - heading "ASUS ROG Zephyrus G14 creator gaming deal" [level=3] [ref=e212]
+                                    - generic [ref=e213]:
+                                        - img [ref=e214]
+                                        - img [ref=e216]
+                                        - img [ref=e218]
+                                        - img [ref=e220]
+                                        - img [ref=e222]
+                                        - generic [ref=e224]: "4.5"
+                                    - generic [ref=e225]:
+                                        - generic [ref=e226]: ₹1,39,990
+                                        - generic [ref=e227]: ₹1,69,990
+                                    - generic [ref=e228]:
+                                        - generic [ref=e229]: Amazon
+                                        - generic [ref=e230]:
+                                            - img [ref=e231]
+                                            - generic [ref=e234]: 1 d ago
+                                - generic [ref=e236]: Unavailable
+                            - generic [ref=e239]:
+                                - generic [ref=e240]: "-29%"
+                                - button "Save to wishlist" [ref=e242]:
+                                    - img [ref=e243]
+                                - link "Sony WH-1000XM5 work and travel headphone deal 0 Very Good Sony WH-1000XM5 work and travel headphone deal 4.8 ₹24,990 ₹34,990 Croma 1 d ago" [ref=e245] [cursor=pointer]:
+                                    - /url: /product/sony-wh-1000xm5-work-travel-audio-deal
+                                    - img "Sony WH-1000XM5 work and travel headphone deal" [ref=e247]
+                                    - 'generic "AI Score: 83/100 — Very Good" [ref=e250]':
+                                        - generic [ref=e251]:
+                                            - img [ref=e252]
+                                            - generic [ref=e255]: "0"
+                                        - generic [ref=e256]: Very Good
+                                    - heading "Sony WH-1000XM5 work and travel headphone deal" [level=3] [ref=e257]
+                                    - generic [ref=e258]:
+                                        - img [ref=e259]
+                                        - img [ref=e261]
+                                        - img [ref=e263]
+                                        - img [ref=e265]
+                                        - img [ref=e267]
+                                        - generic [ref=e269]: "4.8"
+                                    - generic [ref=e270]:
+                                        - generic [ref=e271]: ₹24,990
+                                        - generic [ref=e272]: ₹34,990
+                                    - generic [ref=e273]:
+                                        - generic [ref=e274]: Croma
+                                        - generic [ref=e275]:
+                                            - img [ref=e276]
+                                            - generic [ref=e279]: 1 d ago
+                                - generic [ref=e281]: Unavailable
+                    - link "View All Deals" [ref=e283] [cursor=pointer]:
+                        - /url: /deals
+                        - button "View All Deals" [ref=e284]:
+                            - generic [ref=e285]: View All Deals
+                - generic [ref=e287]:
+                    - generic [ref=e288]:
+                        - heading "AI Recommendations" [level=2] [ref=e289]
+                        - paragraph [ref=e290]: Top picks selected by our AI based on value, quality, and trust.
+                    - generic [ref=e292]:
+                        - generic [ref=e296]:
+                            - generic [ref=e297]: "-21%"
+                            - button "Save to wishlist" [ref=e299]:
+                                - img [ref=e300]
+                            - link "Nothing Phone 2a clean Android midrange deal 0 Very Good Nothing Phone 2a clean Android midrange deal 4.4 ₹21,999 ₹27,999 Flipkart 1 d ago" [ref=e302] [cursor=pointer]:
+                                - /url: /product/nothing-phone-2a-clean-android-midrange-deal
+                                - img "Nothing Phone 2a clean Android midrange deal" [ref=e304]
+                                - 'generic "AI Score: 77/100 — Very Good" [ref=e307]':
+                                    - generic [ref=e308]:
+                                        - img [ref=e309]
+                                        - generic [ref=e312]: "0"
+                                    - generic [ref=e313]: Very Good
+                                - heading "Nothing Phone 2a clean Android midrange deal" [level=3] [ref=e314]
+                                - generic [ref=e315]:
+                                    - img [ref=e316]
+                                    - img [ref=e318]
+                                    - img [ref=e320]
+                                    - img [ref=e322]
+                                    - img [ref=e324]
+                                    - generic [ref=e326]: "4.4"
+                                - generic [ref=e327]:
+                                    - generic [ref=e328]: ₹21,999
+                                    - generic [ref=e329]: ₹27,999
+                                - generic [ref=e330]:
+                                    - generic [ref=e331]: Flipkart
+                                    - generic [ref=e332]:
+                                        - img [ref=e333]
+                                        - generic [ref=e336]: 1 d ago
+                            - generic [ref=e338]: Unavailable
+                        - generic [ref=e342]:
+                            - generic [ref=e343]: "-29%"
+                            - button "Save to wishlist" [ref=e345]:
+                                - img [ref=e346]
+                            - link "Sony WH-1000XM5 work and travel headphone deal 0 Very Good Sony WH-1000XM5 work and travel headphone deal 4.8 ₹24,990 ₹34,990 Croma 1 d ago" [ref=e348] [cursor=pointer]:
+                                - /url: /product/sony-wh-1000xm5-work-travel-audio-deal
+                                - img "Sony WH-1000XM5 work and travel headphone deal" [ref=e350]
+                                - 'generic "AI Score: 83/100 — Very Good" [ref=e353]':
+                                    - generic [ref=e354]:
+                                        - img [ref=e355]
+                                        - generic [ref=e358]: "0"
+                                    - generic [ref=e359]: Very Good
+                                - heading "Sony WH-1000XM5 work and travel headphone deal" [level=3] [ref=e360]
+                                - generic [ref=e361]:
+                                    - img [ref=e362]
+                                    - img [ref=e364]
+                                    - img [ref=e366]
+                                    - img [ref=e368]
+                                    - img [ref=e370]
+                                    - generic [ref=e372]: "4.8"
+                                - generic [ref=e373]:
+                                    - generic [ref=e374]: ₹24,990
+                                    - generic [ref=e375]: ₹34,990
+                                - generic [ref=e376]:
+                                    - generic [ref=e377]: Croma
+                                    - generic [ref=e378]:
+                                        - img [ref=e379]
+                                        - generic [ref=e382]: 1 d ago
+                            - generic [ref=e384]: Unavailable
+                        - generic [ref=e388]:
+                            - generic [ref=e389]: "-11%"
+                            - button "Save to wishlist" [ref=e391]:
+                                - img [ref=e392]
+                            - link "Samsung Galaxy S24 Ultra camera flagship offer 0 Good Samsung Galaxy S24 Ultra camera flagship offer 4.7 ₹1,19,999 ₹1,34,999 Flipkart 1 d ago" [ref=e394] [cursor=pointer]:
+                                - /url: /product/samsung-galaxy-s24-ultra-camera-deal
+                                - img "Samsung Galaxy S24 Ultra camera flagship offer" [ref=e396]
+                                - 'generic "AI Score: 72/100 — Good" [ref=e399]':
+                                    - generic [ref=e400]:
+                                        - img [ref=e401]
+                                        - generic [ref=e404]: "0"
+                                    - generic [ref=e405]: Good
+                                - heading "Samsung Galaxy S24 Ultra camera flagship offer" [level=3] [ref=e406]
+                                - generic [ref=e407]:
+                                    - img [ref=e408]
+                                    - img [ref=e410]
+                                    - img [ref=e412]
+                                    - img [ref=e414]
+                                    - img [ref=e416]
+                                    - generic [ref=e418]: "4.7"
+                                - generic [ref=e419]:
+                                    - generic [ref=e420]: ₹1,19,999
+                                    - generic [ref=e421]: ₹1,34,999
+                                - generic [ref=e422]:
+                                    - generic [ref=e423]: Flipkart
+                                    - generic [ref=e424]:
+                                        - img [ref=e425]
+                                        - generic [ref=e428]: 1 d ago
+                            - generic [ref=e430]: Unavailable
+                        - generic [ref=e434]:
+                            - generic [ref=e435]: "-12%"
+                            - button "Save to wishlist" [ref=e437]:
+                                - img [ref=e438]
+                            - link "MacBook Air M3 16GB for students and creators 0 Good MacBook Air M3 16GB for students and creators 4.8 ₹1,09,900 ₹1,24,900 Amazon 1 d ago" [ref=e440] [cursor=pointer]:
+                                - /url: /product/macbook-air-m3-16gb-student-creator-deal
+                                - img "MacBook Air M3 16GB for students and creators" [ref=e442]
+                                - 'generic "AI Score: 73/100 — Good" [ref=e445]':
+                                    - generic [ref=e446]:
+                                        - img [ref=e447]
+                                        - generic [ref=e450]: "0"
+                                    - generic [ref=e451]: Good
+                                - heading "MacBook Air M3 16GB for students and creators" [level=3] [ref=e452]
+                                - generic [ref=e453]:
+                                    - img [ref=e454]
+                                    - img [ref=e456]
+                                    - img [ref=e458]
+                                    - img [ref=e460]
+                                    - img [ref=e462]
+                                    - generic [ref=e464]: "4.8"
+                                - generic [ref=e465]:
+                                    - generic [ref=e466]: ₹1,09,900
+                                    - generic [ref=e467]: ₹1,24,900
+                                - generic [ref=e468]:
+                                    - generic [ref=e469]: Amazon
+                                    - generic [ref=e470]:
+                                        - img [ref=e471]
+                                        - generic [ref=e474]: 1 d ago
+                            - generic [ref=e476]: Unavailable
+                - generic [ref=e478]:
+                    - generic [ref=e479]:
+                        - heading "Top Categories" [level=2] [ref=e480]
+                        - paragraph [ref=e481]: Browse deals by your favorite tech categories.
+                    - generic [ref=e483]:
+                        - link "Audio Explore deals" [ref=e485] [cursor=pointer]:
+                            - /url: /deals?category=audio
+                            - generic [ref=e487]:
+                                - img [ref=e491]
+                                - generic [ref=e494]:
+                                    - heading "Audio" [level=3] [ref=e495]
+                                    - paragraph [ref=e496]:
+                                        - text: Explore deals
+                                        - img [ref=e497]
+                        - link "Gaming Explore deals" [ref=e500] [cursor=pointer]:
+                            - /url: /deals?category=gaming
+                            - generic [ref=e502]:
+                                - img [ref=e506]
+                                - generic [ref=e509]:
+                                    - heading "Gaming" [level=3] [ref=e510]
+                                    - paragraph [ref=e511]:
+                                        - text: Explore deals
+                                        - img [ref=e512]
+                        - link "Laptops Explore deals" [ref=e515] [cursor=pointer]:
+                            - /url: /deals?category=laptops
+                            - generic [ref=e517]:
+                                - img [ref=e521]
+                                - generic [ref=e524]:
+                                    - heading "Laptops" [level=3] [ref=e525]
+                                    - paragraph [ref=e526]:
+                                        - text: Explore deals
+                                        - img [ref=e527]
+                        - link "Smartphones Explore deals" [ref=e530] [cursor=pointer]:
+                            - /url: /deals?category=smartphones
+                            - generic [ref=e532]:
+                                - img [ref=e536]
+                                - generic [ref=e539]:
+                                    - heading "Smartphones" [level=3] [ref=e540]
+                                    - paragraph [ref=e541]:
+                                        - text: Explore deals
+                                        - img [ref=e542]
+                - generic [ref=e549]:
+                    - generic [ref=e550]: 📬
+                    - heading "Never Miss a Price Drop" [level=2] [ref=e551]
+                    - paragraph [ref=e552]:
+                        - text: Join
+                        - generic [ref=e553]: 0+
+                        - text: tech enthusiasts. Get the best AI-verified deals and tech buying guides delivered weekly.
+                    - generic [ref=e554]:
+                        - textbox "Email address" [ref=e555]:
+                            - /placeholder: your@email.com
+                        - button "Subscribe" [ref=e556]
+    - contentinfo [ref=e557]:
+        - generic [ref=e558]:
+            - generic [ref=e559]:
+                - generic [ref=e560]:
+                    - heading "TA TechDeals ." [level=3] [ref=e561]:
+                        - generic [ref=e562]: TA
+                        - text: TechDeals
+                        - generic [ref=e563]: .
+                    - paragraph [ref=e564]: Discover AI-curated tech deals. We analyse thousands of products daily and surface only the best value for money.
+                    - generic [ref=e565]:
+                        - link "📲 WhatsApp" [ref=e566] [cursor=pointer]:
+                            - /url: /contact
+                        - link "✈️ Telegram" [ref=e567] [cursor=pointer]:
+                            - /url: /contact
+                - generic [ref=e568]:
+                    - heading "Deals" [level=4] [ref=e569]
+                    - list [ref=e570]:
+                        - listitem [ref=e571]:
+                            - link "All Deals" [ref=e572] [cursor=pointer]:
+                                - /url: /deals
+                        - listitem [ref=e573]:
+                            - link "Hot Deals" [ref=e574] [cursor=pointer]:
+                                - /url: /deals?type=HOT
+                        - listitem [ref=e575]:
+                            - link "Coupons" [ref=e576] [cursor=pointer]:
+                                - /url: /coupons
+                        - listitem [ref=e577]:
+                            - link "Compare" [ref=e578] [cursor=pointer]:
+                                - /url: /compare
+                - generic [ref=e579]:
+                    - heading "Content" [level=4] [ref=e580]
+                    - list [ref=e581]:
+                        - listitem [ref=e582]:
+                            - link "Blog" [ref=e583] [cursor=pointer]:
+                                - /url: /blog
+                        - listitem [ref=e584]:
+                            - link "Quiz Answers" [ref=e585] [cursor=pointer]:
+                                - /url: /quiz-answers
+                        - listitem [ref=e586]:
+                            - link "Stores" [ref=e587] [cursor=pointer]:
+                                - /url: /store
+                        - listitem [ref=e588]:
+                            - link "Brands" [ref=e589] [cursor=pointer]:
+                                - /url: /brand
+                - generic [ref=e590]:
+                    - heading "Legal" [level=4] [ref=e591]
+                    - list [ref=e592]:
+                        - listitem [ref=e593]:
+                            - link "About Us" [ref=e594] [cursor=pointer]:
+                                - /url: /about
+                        - listitem [ref=e595]:
+                            - link "Contact" [ref=e596] [cursor=pointer]:
+                                - /url: /contact
+                        - listitem [ref=e597]:
+                            - link "Privacy Policy" [ref=e598] [cursor=pointer]:
+                                - /url: /privacy
+                        - listitem [ref=e599]:
+                            - link "Terms of Service" [ref=e600] [cursor=pointer]:
+                                - /url: /terms
+                        - listitem [ref=e601]:
+                            - link "Disclaimer" [ref=e602] [cursor=pointer]:
+                                - /url: /disclaimer
+            - generic [ref=e603]:
+                - paragraph [ref=e604]: As an Amazon Associate and affiliate partner, we earn from qualifying purchases.
+                - paragraph [ref=e605]: © 2026 TechDeals AI. All rights reserved.
+    - navigation [ref=e606]:
+        - generic [ref=e607]:
+            - link "Home" [ref=e608] [cursor=pointer]:
+                - /url: /
+                - img [ref=e610]
+                - generic [ref=e613]: Home
+            - link "Deals" [ref=e614] [cursor=pointer]:
+                - /url: /deals
+                - img [ref=e616]
+                - generic [ref=e619]: Deals
+            - link "Coupons" [ref=e620] [cursor=pointer]:
+                - /url: /coupons
+                - img [ref=e622]
+                - generic [ref=e626]: Coupons
+            - link "Compare" [ref=e627] [cursor=pointer]:
+                - /url: /compare
+                - img [ref=e629]
+                - generic [ref=e632]: Compare
+    - button "Open AI Assistant" [ref=e633]:
+        - img [ref=e634]
+```
