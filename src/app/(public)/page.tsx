@@ -73,7 +73,7 @@ export default async function HomePage() {
       {/* ═══════════════════════════════════════════════════════════════════ */}
       {/* 1. HERO SECTION                                                    */}
       {/* ═══════════════════════════════════════════════════════════════════ */}
-      <section className="relative px-4 sm:px-6 lg:px-8 pt-12 pb-8 sm:pt-24 sm:pb-20 max-w-7xl mx-auto">
+      <section className="relative px-4 sm:px-6 lg:px-8 pt-24 pb-8 sm:pt-32 sm:pb-20 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Copy & CTA */}
           <div className="text-center lg:text-left z-10">
