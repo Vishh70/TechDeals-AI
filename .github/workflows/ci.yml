@@ -46,7 +46,7 @@ jobs:
         run: node scripts/check-bundle-size.js
 
       - name: Upload unit coverage
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: coverage
@@ -85,7 +85,7 @@ jobs:
         run: npx playwright test tests/visual --project=responsive-390 --project=responsive-768 --project=responsive-1440 --update-snapshots=missing
 
       - name: Upload Playwright reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: playwright-reports
