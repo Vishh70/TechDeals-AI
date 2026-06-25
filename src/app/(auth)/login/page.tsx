@@ -19,7 +19,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen overflow-hidden flex items-center justify-center p-4">
+    <div className="min-h-[100dvh] overflow-hidden flex items-center justify-center p-4">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(600px,90vw)] h-[min(400px,60vh)] bg-gradient-to-r from-[var(--color-primary)]/20 to-blue-500/20 blur-[100px] -z-10 rounded-full" />
 
       <GlassCard className="w-full max-w-md p-8 md:p-12">

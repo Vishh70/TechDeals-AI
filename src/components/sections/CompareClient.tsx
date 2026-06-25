@@ -74,7 +74,7 @@ export function CompareClient({ deals, categories }: CompareClientProps) {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-12">
       <SectionHeading
         title="Product Comparison"
         subtitle="Select up to 3 products and compare them side-by-side."

@@ -54,7 +54,7 @@ export default async function QuizAnswersPage() {
   const archivePosts = posts.filter((q) => !todayPosts.includes(q));
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-16">
       {/* Hero */}
       <div className="text-center mb-14 p-12 rounded-3xl bg-gradient-to-br from-orange-500/10 via-transparent to-blue-500/10 border border-[var(--color-glass-border)] relative overflow-hidden">
         <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-orange-500/5 to-blue-500/5 -z-10" />

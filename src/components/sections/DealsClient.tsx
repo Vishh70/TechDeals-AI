@@ -50,7 +50,7 @@ export function DealsClient({
   const [brand, setBrand] = useState("");
   const [dealType, setDealType] = useState("");
   const [minDiscount, setMinDiscount] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(5000);
+  const [maxPrice, setMaxPrice] = useState(200000);
   const [sort, setSort] = useState("popular");
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -333,15 +333,15 @@ export function DealsClient({
           name="maxPrice"
           type="range"
           min={50}
-          max={5000}
-          step={50}
+          max={200000}
+          step={1000}
           value={maxPrice}
           onChange={(e) => setMaxPrice(+e.target.value)}
           className="w-full accent-[var(--color-primary)] cursor-pointer"
         />
         <div className="flex justify-between text-xs text-gray-500 mt-1">
           <span>₹50</span>
-          <span>₹5,000</span>
+          <span>₹2,00,000</span>
         </div>
       </div>
 
@@ -418,7 +418,7 @@ export function DealsClient({
 
       {/* Mobile Filter Drawer */}
       {sidebarOpen && (
-        <div className="lg:hidden fixed inset-0 z-50 flex">
+        <div className="lg:hidden fixed inset-0 z-[110] flex">
           <div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setSidebarOpen(false)}

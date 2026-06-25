@@ -92,7 +92,7 @@ export default async function BlogPostPage({
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 lg:pt-32 pb-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -198,6 +198,6 @@ export default async function BlogPostPage({
           </div>
         </div>
       )}
-    </div>
+    </article>
   );
 }

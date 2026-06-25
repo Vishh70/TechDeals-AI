@@ -10,7 +10,7 @@ const AiAssistant = dynamic(() =>
 
 function Footer() {
   return (
-    <footer className="w-full bg-white border-t border-[#ECECEC] pt-10 pb-[160px] lg:pb-10 relative z-10">
+    <footer className="bg-white border-t border-[#ECECEC] pt-[60px] pb-24 md:pb-[60px] mt-auto relative z-10">
       <div className="max-w-7xl mx-auto px-5">
         {/* Brand Section */}
         <div className="max-w-[280px] mx-auto flex flex-col items-center text-center">

@@ -3,6 +3,7 @@ import { getCategories, getDealsByCategory } from "@/lib/data";
 import { ProductCard } from "@/components/sections/ProductCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Laptop, Smartphone, Headphones, Gamepad2, Tag } from "lucide-react";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -95,8 +96,21 @@ export default async function CategoryPage({
             <ProductCard key={deal.id} product={deal} />
           ))
         ) : (
-          <div className="col-span-full text-center text-gray-500 py-20">
-            No deals found for this category right now. Check back soon!
+          <div className="col-span-full text-center py-24 bg-white/40 backdrop-blur-md rounded-3xl border border-gray-100 shadow-sm">
+            <div className="text-6xl mb-4">🛒</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              No deals found
+            </h3>
+            <p className="text-gray-600 mb-6">
+              We&apos;re currently hunting for the best {category.name} deals.
+              Check back soon!
+            </p>
+            <Link
+              href="/deals"
+              className="px-6 py-3 rounded-xl bg-[var(--color-primary)] text-white font-medium hover:bg-opacity-90 transition-all inline-block"
+            >
+              Browse All Deals
+            </Link>
           </div>
         )}
       </div>

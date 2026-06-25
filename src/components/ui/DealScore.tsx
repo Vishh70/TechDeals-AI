@@ -171,7 +171,7 @@ export function DealScore({
         </span>
       </div>
       <span
-        className={`${s.label} font-bold uppercase tracking-wider`}
+        className={`${s.label} font-bold uppercase tracking-wider whitespace-nowrap text-center`}
         style={{ color }}
       >
         {label}
