@@ -8,7 +8,7 @@ on:
 
 jobs:
   dora-metrics:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - name: Calculate DORA Metrics (Placeholder)
         run: echo "DORA metrics collection temporarily disabled until a free/maintained action is selected."
